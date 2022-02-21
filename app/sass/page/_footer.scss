@@ -1,0 +1,136 @@
+.footer-page__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    
+    @include respond(tabdesk) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-page__col {
+        @include respond(tabdesk) {
+          margin-bottom: 20px;
+        }
+    }
+}
+.footer-page__item:first-child {
+    padding: 14px 60px 14px 20px;
+    background: #171717;
+    border-radius: 20px;
+    margin-bottom: 20px;
+
+    @include respond(phone) {
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+
+    @include respond(mobilemini) {
+      flex-direction: column;
+    }
+}
+.footer-page__item:nth-child(2) {
+    margin-bottom: 30px;
+}
+.footer-page__bottom {
+    background-color: #000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 32px;
+}
+.contact {
+    display: flex;
+    align-items: center;
+
+    @include respond(mobilemini) {
+      flex-direction: column;
+    }
+}
+.contact__item:not(:last-child) {
+    margin-right: 30px;
+
+    @include respond(mobilemini) {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+}
+
+.contact__link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    transition: all 0.3s;
+}
+
+.contact__link:hover {
+  color: #FFDF3F;
+}
+
+.footer-page__text {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.3);
+
+    @include respond(mobilemini) {
+      font-size: 12px;
+      line-height: 22px;
+    }
+}
+
+.footer-page__private {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    img {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+    span {
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 400;
+        display: inline-block;
+        margin-left: 10px;
+
+        @include respond(mobilemini) {
+          margin-left: 0;
+          margin-top: 10px;
+        }
+    }
+
+    @include respond(mobilemini) {
+      flex-direction: column;
+      text-align: center;
+    }
+}
+
+.footer-page__copyright {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    @include respond(mobilemini) {
+      justify-content: center;
+    }
+    span {
+        color: #FFC93F;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 400;
+    }
+    span:last-child {
+        @include respond(mobilemini) {
+          display: none;
+        }
+    }
+    div {
+        display: inline-block;
+        text-decoration: underline;
+    }
+}
