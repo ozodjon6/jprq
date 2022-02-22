@@ -797,7 +797,7 @@ template {
 }
 .main-page {
   position: relative;
-  min-height: 50vh
+  min-height: 40vh
 }
 @media (max-width:1199px) {
   .main-page {
@@ -878,6 +878,32 @@ template {
     -ms-flex-pack: center;
     justify-content: center;
     margin-right: 0
+  }
+}
+.cards::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  background-image: url(../../images/star.png);
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: 120px 120px;
+  width: 100%;
+  height: 100%
+}
+@media (max-width:1199px) {
+  .cards::before {
+    background-position: top right;
+    background-size: 72px 72px;
+    top: -25px;
+    left: auto;
+    z-index: 20
+  }
+}
+@media (max-width:767px) {
+  .cards::before {
+    right: -25px
   }
 }
 .card {
