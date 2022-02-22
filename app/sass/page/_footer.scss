@@ -9,7 +9,7 @@
       justify-content: center;
     }
 
-    .footer-page__col {
+    .footer-page__col:first-child {
         @include respond(tabdesk) {
           margin-bottom: 20px;
         }
@@ -22,7 +22,7 @@
     margin-bottom: 20px;
 
     @include respond(phone) {
-      padding-bottom: 20px;
+      padding: 20px;
       margin-bottom: 20px;
     }
 

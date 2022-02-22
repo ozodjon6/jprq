@@ -1,6 +1,6 @@
 .main-page {
     position: relative;
-    min-height: 60vh;
+    min-height: 50vh;
 
     @include respond(desktop) {
       margin-bottom: 30px;
@@ -14,8 +14,8 @@
 .main-page::before {
     content: "";
     position: absolute;
-    top: -25vh;
-    right: 0px;
+    top: -22vh;
+    right: -10vh;
     background-image: url(../images/image-3.png);
     background-position: center right;
     background-repeat: no-repeat;
@@ -23,6 +23,10 @@
     z-index: 1;
     width: 100%;
     height: 100%;
+
+    @include respond(desktop) {
+      display: none;
+    }
 }
 
 .main-page::after {
@@ -40,6 +44,10 @@
     z-index: -1;
     width: 100%;
     height: 401px;
+
+    @include respond(mobilemini) {
+      bottom: 30%;
+    }
 }
 
 .cards {
@@ -82,12 +90,15 @@
         flex: 0 0 calc((100% - 2*30px)/2);
         max-width: calc((100% - 2*30px)/2);
         margin-bottom: 70px;
+        align-items: center;
+        justify-content: center;
     }
 
     @include respond(mobilemini) {
         flex: 0 0 100%;
         max-width: 100%;
         margin-right: 0;
+        padding: 41px 10px 20px;
     }
 }
 
@@ -114,33 +125,29 @@
     opacity: 1;
 }
 
-// .card::before {
-//     content: '';
-//     position: absolute;
-//     top: -50px;
-//     margin-left: -55px;
-//     background-image: url(../images/icon-1.png);
-//     background-position: center bottom;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     width: 111px;
-//     height: 99px;
-// }
-
-// .card__bonus::before {
-//     background-image: url(../images/icon-2.png);
-// }
-
-// .card__game::before {
-//     background-image: url(../images/icon-3.png);
-// }
 .card__icon {
     margin-right: 20px;
     flex-shrink: 0;
+    width: 89px;
+    height: 89px;
+
+    @include respond(mobilemini) {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      margin-left: -30px;
+      width: 61px;
+      height: 61px;
+      margin-right: 0;
+    }
 }
 
 .card__content {
     text-align: left;
+
+    @include respond(mobilemini) {
+      text-align: center;
+    }
 }
 
 .card__title {
@@ -154,6 +161,11 @@
     @include respond(desktop) {
       white-space: unset;
     }
+
+    @include respond(mobilemini) {
+      font-size: 20px;
+      line-height: 24px;
+    }
 }
 
 .card__subtitle {
@@ -161,6 +173,7 @@
     line-height: 17px;
     font-weight: 400;
     display: block;
+    font-family: 'gilroymedium';
 }
 
 .main-page__btn {
@@ -172,7 +185,8 @@
 .main-page__connect {
     margin-bottom: 50px;
 }
-.main-page__connect::before {
+.main-page__connect::before,
+.main-page__connect::after {
     display: none;
 }
 
@@ -203,6 +217,14 @@
       min-height: 250px;
     }
 }
+
+.grid__item:nth-child(3n) {
+    @include respond(mobilemini) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+}
+
 .grid__item:hover {
     cursor: pointer;
 }
@@ -236,8 +258,8 @@
 
 .grid__item .start-btn,
 .grid__item-row .start-btn {
-    background: linear-gradient(180deg, #EB2655 0%, #72021D 100%);
-    border-radius: 10px;
+    background: linear-gradient(180deg, #FFC93F 0%, #FF9B3F 100%);
+    border-radius: 100px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -254,7 +276,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FFFFFF;
+    color: #000000;
     text-decoration: none;
     width: 100%;
     z-index: 10;
@@ -273,8 +295,8 @@
     top: 0px;
     right: 0px;
     bottom: 0px;
-    background: linear-gradient(180deg, #EB6D26 0%, #72021D 100%);
-    border-radius: 10px;
+    background: linear-gradient(180deg, #FFE194 0%, #FFC793 100%);
+    border-radius: 100px;
     opacity: 0;
     z-index: -1;
     transition: all 0.3s ease-in-out;
@@ -332,7 +354,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    background: linear-gradient(180deg, #111A36 0%, #04091B 100%);
+    background: linear-gradient(180deg, #FFC93F 0%, #FF9B3F 100%);
     transition: 0.4s ease-in-out;
     border-radius: 10px;         
     padding: 30px 20px 37px;   
@@ -353,7 +375,7 @@
     right: -13px;
     width: 26px;
     height: 26px;
-    background: #EB2655;
+    background: #fff;
     border-radius: 50%;
     background-image: url(../images/icons/close.svg);
     background-repeat: no-repeat;
@@ -373,6 +395,7 @@
     font-weight: 700;
     text-align: center;
     margin-bottom: 25px;
+    color: #000000;
 }
 
 .form-page__wrp {
@@ -414,7 +437,7 @@
     position: relative;
     width: 15px;
     height: 15px;
-    border: 1px solid #243467;
+    border: 1px solid #010101;
     margin-right: 10px;
     display: inline-block;
     flex-shrink: 0;
@@ -423,13 +446,12 @@
 .form-checkbox__circular:before {
     content: "";
     position: absolute;
-    width: 6px;
-    height: 6px;
+    width: 5px;
+    height: 5px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    border-radius: 50%;
-    background-color: #EB2655;
+    background-color: #000;
     opacity: 0;
     transition: opacity .2s;
 }
@@ -442,6 +464,8 @@
     font-size: 12px;
     line-height: 15px;
     font-weight: 400;
+    color: #000;
+    font-family: 'gilroymedium', Arial, Helvetica, sans-serif;
 }
 
 .form-page__field {
@@ -459,6 +483,8 @@
     font-weight: 400;
     margin-bottom: 8px;
     display: inline-block;
+    color: #000000;
+    font-family: 'gilroymedium', Arial, Helvetica, sans-serif;
 
     @include respond(mobilemini) {
       line-height: 14px;
@@ -469,13 +495,12 @@
 
 .form-page__input {
     width: 100%;
-    background: #060C20;
-    border: 1px solid #243467;
+    background: #fff;
     box-sizing: border-box;
     border-radius: 5px;
     min-height: 40px;
     padding: 12px;
-    color: #FFFFFF;
+    color: #000;
     outline: 0;
 
     @include respond(mobilemini) {
@@ -486,7 +511,7 @@
 }
 
 .form-page__btn {
-    background: linear-gradient(180deg, #EB2655 0%, #72021D 100%);
+    background: #000000;
     border-radius: 10px;
     font-weight: 500;
     font-size: 16px;
@@ -512,7 +537,7 @@
     top: 0px;
     right: 0px;
     bottom: 0px;
-    background: linear-gradient(180deg, #EB6D26 0%, #72021D 100%);
+    background: linear-gradient(180deg, #FFE194 0%, #FFC793 100%);
     border-radius: 10px;
     opacity: 0;
     z-index: -1;
@@ -523,15 +548,20 @@
     opacity: 1;
   }
 
+.form-page__btn:hover {
+    color: #000000;
+}
+
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(12, 19, 47, 0.7);
+    background:  rgba(0, 0, 0, 0.7);
     display: none;
     transition: all 0.3s;
+    z-index: 10;
 }
 .overlay.active {
     display: flex;
