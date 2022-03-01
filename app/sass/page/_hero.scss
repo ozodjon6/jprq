@@ -17,7 +17,7 @@
   top: 0;
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 78.12%, #000000 100%), url(../images/image-2.png);
   background-position: top center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
   width: 100%;
@@ -312,13 +312,15 @@
 .hero-page__info {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .hero-page__content {
+  @include respond(tabdesk) {
+    justify-content: center;
+  }
     @include respond(mobilemini) {
       flex-wrap: wrap;
-      justify-content: center;
     }
 }
 
@@ -417,7 +419,6 @@
   line-height: 38px;
   font-weight: 400;
   text-align: center;
-  max-width: 650px;
   width: 100%;
   margin: auto;
   position: relative;

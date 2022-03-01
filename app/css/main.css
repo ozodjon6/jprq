@@ -305,7 +305,7 @@ template {
   background-image: -o-linear-gradient(top,rgba(0,0,0,0) 78.12%,#000 100%),url(../images/image-2.png);
   background-image: linear-gradient(180deg,rgba(0,0,0,0) 78.12%,#000 100%),url(../images/image-2.png);
   background-position: top center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   z-index: -1;
   width: 100%;
@@ -656,17 +656,21 @@ template {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start
+}
+@media (max-width:991px) {
+  .hero-page__content {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+  }
 }
 @media (max-width:767px) {
   .hero-page__content {
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center
+    flex-wrap: wrap
   }
 }
 @media (max-width:767px) {
@@ -768,7 +772,6 @@ template {
   line-height: 38px;
   font-weight: 400;
   text-align: center;
-  max-width: 650px;
   width: 100%;
   margin: auto;
   position: relative
@@ -823,12 +826,41 @@ template {
   }
 }
 .main-page {
-  position: relative;
-  margin-bottom: 50px
+  position: relative
 }
-@media (max-width:1199px) {
-  .main-page {
-    margin-bottom: 30px
+.main-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  background-image: url(../images/image-3.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: .7;
+  width: 100%;
+  height: 100%
+}
+@media (max-width:991px) {
+  .main-page::before {
+    display: none
+  }
+}
+.main-page::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-image: url(../images/coint.png);
+  background-size: 432px 432px;
+  background-position: bottom -33px left -33px;
+  background-repeat: no-repeat;
+  z-index: -1;
+  width: 100%;
+  height: 100%
+}
+@media (max-width:991px) {
+  .main-page::after {
+    display: none
   }
 }
 .main-page__active::before {
@@ -1444,22 +1476,12 @@ template {
   display: flex
 }
 .footer-page {
-  position: relative
+  position: relative;
+  margin-top: 50px
 }
-.footer-page::before {
-  content: "";
-  position: absolute;
-  background-image: url(../images/coint.png),url(../images/image-3.png);
-  background-size: contain,cover;
-  background-position: left bottom,center center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  width: 100%;
-  height: 100%
-}
-@media (max-width:991px) {
-  .footer-page::before {
-    display: none
+@media (max-width:767px) {
+  .footer-page {
+    margin-top: 40px
   }
 }
 .footer-page__item {

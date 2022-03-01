@@ -1,9 +1,39 @@
 .main-page {
     position: relative;
-    margin-bottom: 50px;
+}
 
-    @include respond(desktop) {
-      margin-bottom: 30px;
+.main-page::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    background-image: url(../images/image-3.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: .7;
+    width: 100%;
+    height: 100%;
+  
+    @include respond(tabdesk) {
+      display: none;
+    }
+}
+
+.main-page::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    background-image: url(../images/coint.png);
+    background-size: 432px 432px;
+    background-position: bottom -33px left -33px;
+    background-repeat: no-repeat;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  
+    @include respond(tabdesk) {
+      display: none;
     }
 }
 
