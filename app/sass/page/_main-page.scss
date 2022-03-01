@@ -5,9 +5,9 @@
 .main-page::before {
     content: "";
     position: absolute;
-    top: 0px;
+    top: -70px;
     background-image: url(../images/image-3.png);
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     z-index: -1;
@@ -25,8 +25,8 @@
     position: absolute;
     bottom: 0px;
     background-image: url(../images/coint.png);
-    background-size: 432px 432px;
-    background-position: bottom -33px left -33px;
+    background-size: 266px 266px;
+    background-position: bottom -16px left -16px;
     background-repeat: no-repeat;
     z-index: -1;
     width: 100%;
