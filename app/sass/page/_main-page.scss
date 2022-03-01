@@ -1,6 +1,6 @@
 .main-page {
     position: relative;
-    min-height: 40vh;
+    margin-bottom: 50px;
 
     @include respond(desktop) {
       margin-bottom: 30px;
@@ -11,51 +11,12 @@
     display: none;
 }
 
-.main-page::before {
-    content: "";
-    position: absolute;
-    top: -22vh;
-    right: -10vh;
-    background-image: url(../images/image-3.png);
-    background-position: center right;
-    background-repeat: no-repeat;
-    background-size: 400px 331px;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-
-    @include respond(desktop) {
-      display: none;
-    }
-}
-
-.main-page::after {
-    content: "";
-    position: absolute;
-    top: auto;
-    bottom: 60%;
-    /* left: auto; */
-    right: 0;
-    /* margin-left: -30%; */
-    background-image: linear-gradient(180deg, #000000 31.14%, rgba(0, 0, 0, 0) 61.75%, #000000 95.32%), url(../images/image-2.png);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: -1;
-    width: 100%;
-    height: 401px;
-
-    @include respond(mobilemini) {
-      bottom: 30%;
-    }
-}
 
 .cards {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-right: -30px;
-    position: relative;
 
     @include respond(desktop) {
       flex-wrap: wrap;
@@ -70,27 +31,16 @@
     }
 }
 .cards::before {
-    content: "";
-    position: absolute;
-    top: -60px;
-    left: -60px;
-    background-image: url(../../images/star.png);
-    background-position: center left;
-    background-repeat: no-repeat;
-    background-size: 120px 120px;
-    width: 100%;
-    height: 100%;
-
-    @include respond(desktop) {
-        background-position: top right;
-        background-size: 72px 72px;
-        top: -25px;
-        left: auto;
-        z-index: 20;
-    }
-
     @include respond(mobilemini) {
-        right: -25px;
+        content: "";
+        position: absolute;
+        background-image: linear-gradient(180deg, #000000 31.14%, rgba(0, 0, 0, 0) 61.75%, #000000 95.32%), url(../images/mobile.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        opacity: .7;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
     }
 }
 
