@@ -1041,10 +1041,6 @@ template {
 .main-page__connect {
   margin-bottom: 50px
 }
-.main-page__connect::after,
-.main-page__connect::before {
-  display: none
-}
 .grid {
   display: -ms-grid;
   display: grid;
